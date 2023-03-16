@@ -1,10 +1,13 @@
-const root = require('./pageRoot');
 const fs = require('fs/promises');
+const { existsSync } = require('fs');
+const root = require('./pageRoot');
 
 (async () => {
   const rootData = await root();
 
-  await fs.mkdir('./dist');
+  if (!existsSync('./dist')) {
+    await fs.mkdir('./dist');
+  }
 
   await fs.writeFile(
     './dist/root.json',
