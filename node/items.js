@@ -6,7 +6,7 @@ const wait = require('./wait');
 
 (async () => {
   const keys = Object.keys(data.content);
-
+  console.log('keys.length', keys.length);
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
     const section = data.content[key];
@@ -18,6 +18,6 @@ const wait = require('./wait');
 
     // Hack to get around session lock.
     console.log(chalk.yellow(`Finished ${section.name} in ${section.parent}`));
-    await wait(10e3);
+    await wait(5e3);
   }
 })();
