@@ -210,7 +210,7 @@ module.exports = async function item(item) {
       }
     }
 
-    return { ...item };
+    return { item };
   });
 
   await browser.close();

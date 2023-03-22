@@ -52,9 +52,10 @@ module.exports = async function root() {
                   specialRules: [],
                   crafting: {
                     description: null,
+                    required: null,
                     cost: [],
                   },
-                  defense: {
+                  defence: {
                     location: null,
                     armor: null,
                   },
