@@ -158,7 +158,10 @@ module.exports = async function item(item) {
         const img = hitLocation.querySelector('[data-image-name]');
         const val = img ? img.dataset.imageName ?? null : null;
         if (val) {
-          item.defence.location = val.replace('Icon.png', '').trim();
+          item.defence.location = val
+            .replace('Icon', '')
+            .replace('.png', '')
+            .trim();
         }
       }
 
